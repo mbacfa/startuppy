@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">StartUppy</string>
+    <string name="welcome_screen_text">Start Uppy</string>
+    <string name="welcome_screen_button">Quiz</string>
+    <string name="next_question_button">Next</string>
+    <string name="previous_question_button">Previous</string>
+    <string name="finish_button">Finish</string>
+    <string name="score_divider">/</string>
+
+    <string-array name="questions">
+        <item name="questionOne">What is the name of a famous Start Up incubator?</item>
+        <item name="questionTwo">According to Paul Graham, what should you do if you want to start a start up?</item>
+        <item name="questionThree">What is a non-negotiable requirement for your business?</item>
+        <item name="questionFour">What should a founder be mostly focused on?</item>
+        <item name="questionFive">What is NOT a requirement for a successful start up?</item>
+    </string-array>
+
+    <string-array name="optionsReferenceArray">
+        <item name="questionOneOptions">@array/options1</item>
+        <item name="questionTwoOptions">@array/options2</item>
+        <item name="questionThreeOptions">@array/options3</item>
+        <item name="questionFourOptions">@array/options4</item>
+        <item name="questionFiveOptions">@array/options5</item>
+    </string-array>
+
+    <string-array name="options1">
+        <item>X Combinator</item>
+        <item>Y Combinator</item>
+        <item>Z Combinator</item>
+        <item>A Combinator</item>
+    </string-array>
+
+    <string-array name="options2">
+        <item>Do things that don\'t scale</item>
+        <item>Raise money as early as possible</item>
+        <item>Keep it a secret</item>
+        <item>Hire as many people as you can</item>
+    </string-array>
+
+    <string-array name="options3">
+        <item>Venture investment</item>
+        <item>Proprietary technology</item>
+        <item>Wide product offerings</item>
+        <item>Customers</item>
+    </string-array>
+
+    <string-array name="options4">
+        <item>Marketing and PR</item>
+        <item>Hiring great talent</item>
+        <item>Owning product development</item>
+        <item>Raising money</item>
+    </string-array>
+
+    <string-array name="options5">
+        <item>Great idea</item>
+        <item>Great team</item>
+        <item>Great investor</item>
+        <item>Great execution</item>
+    </string-array>
+
+    <!-- answers start from 0 for first option, 1 for second... -->
+
+    <integer-array name="answers">
+        <item name="q1">1</item>
+        <item name="q2">0</item>
+        <item name="q3">3</item>
+        <item name="q4">1</item>
+        <item name="q5">2</item>
+    </integer-array>
+
+    <string name="resultsScreenText">Your score</string>
+
+    <string name="learningResources">
+        <a>http://www.ycombinator.com/</a>
+        <a>\nhttp://www.paulgraham.com/ds.html</a>
+        <a>\nhttp://playbook.samaltman.com/</a>
+    </string>
+
+</resources>

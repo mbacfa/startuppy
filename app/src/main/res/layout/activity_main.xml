@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.startuppy.MainActivity"
+    android:background="@color/orange">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/coiny"
+        android:text="@string/welcome_screen_text"
+        android:textSize="@dimen/fontSizeLarge"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/quiz_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/frontPageButtonMargin"
+        android:onClick="openQuiz"
+        android:text="@string/welcome_screen_button"
+        android:textColor="@android:color/white"
+        android:background="@null"
+        android:textSize="@dimen/fontButtons"/>
+
+</RelativeLayout>

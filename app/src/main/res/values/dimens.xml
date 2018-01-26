@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="frontPageButtonMargin">24dp</dimen>
+    <dimen name="fontSizeLarge">56sp</dimen>
+    <dimen name="fontSizeMedium">32sp</dimen>
+    <dimen name="fontSizeSmall">16sp</dimen>
+    <dimen name="fontButtons">14sp</dimen>
+    <dimen name="edge_padding_standard">16dp</dimen>
+</resources>
