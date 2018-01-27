@@ -23,12 +23,10 @@ public class QuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
         currentQuestion = 0;
-
         Resources res = getResources();
         int[] answers = res.getIntArray(R.array.answers);
         int count = answers.length;
         results = new int[count];
-
         updateQuestionAndOptions();
     }
 
@@ -39,11 +37,11 @@ public class QuestionsActivity extends AppCompatActivity {
 
     private void updateQuestionAndOptions () {
         Resources res = getResources();
-
+        //Update question text
         String[] questions = res.getStringArray(R.array.questions);
         TextView questionText = (TextView) findViewById(R.id.question_text);
         questionText.setText(questions[currentQuestion]);
-
+        //Update answer options
         TypedArray optionsReferenceArray = res.obtainTypedArray(R.array.optionsReferenceArray);
         int n = optionsReferenceArray.length();
         String[][] questionOptions = new String[n][];
@@ -52,7 +50,6 @@ public class QuestionsActivity extends AppCompatActivity {
             questionOptions[i] = res.getStringArray(id);
         }
         optionsReferenceArray.recycle();
-
         for (int i = 0; i < radioButtonIdArray.length; i++) {
             RadioButton answerOption = (RadioButton) findViewById(radioButtonIdArray[i]);
             answerOption.setText(questionOptions[currentQuestion][i]);

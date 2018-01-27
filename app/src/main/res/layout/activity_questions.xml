@@ -7,32 +7,44 @@
     android:orientation="vertical"
     tools:context="com.example.android.startuppy.QuestionsActivity">
 
-    <RelativeLayout
+
+    <TextView
+        android:id="@+id/question_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.55"
+        android:layout_weight="0.5"
         android:background="@color/orange"
+        android:fontFamily="@font/coiny"
+        android:gravity="center"
         android:paddingLeft="@dimen/edge_padding_standard"
-        android:paddingRight="@dimen/edge_padding_standard">
+        android:paddingRight="@dimen/edge_padding_standard"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/fontSizeMedium" />
 
-        <TextView
-            android:id="@+id/question_text"
-            android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/orange"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/coiny"
-            android:gravity="center"
+            android:layout_weight="0.5"
+            android:background="@null"
+            android:onClick="moveToPreviousQuestion"
+            android:text="@string/previous_question_button"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/fontSizeMedium" />
-
+            android:textSize="@dimen/fontButtons" />
 
         <Button
             android:id="@+id/next_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_weight="0.5"
             android:background="@null"
             android:onClick="moveToNextQuestion"
             android:text="@string/next_question_button"
@@ -41,11 +53,9 @@
 
         <Button
             android:id="@+id/finish_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5"
             android:background="@null"
             android:onClick="finishQuiz"
             android:text="@string/finish_button"
@@ -53,25 +63,15 @@
             android:textSize="@dimen/fontButtons"
             android:visibility="gone" />
 
-        <Button
-            android:id="@+id/previous_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:background="@null"
-            android:onClick="moveToPreviousQuestion"
-            android:text="@string/previous_question_button"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/fontButtons" />
 
-    </RelativeLayout>
+    </LinearLayout>
+
 
     <RadioGroup
         android:id="@+id/buttonGroup1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.45"
+        android:layout_weight="0.4"
         android:paddingLeft="@dimen/edge_padding_standard"
         android:paddingRight="@dimen/edge_padding_standard">
 
