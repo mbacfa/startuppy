@@ -6,27 +6,45 @@ import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.databinding.DataBindingUtil;
+import com.example.android.startuppy.databinding.ActivityQuestionsBinding;
 
 
 public class QuestionsActivity extends AppCompatActivity {
 
+    ActivityQuestionsBinding binding;
+
     private static final int[] radioButtonIdArray = {R.id.option1, R.id.option2, R.id.option3, R.id.option4};
     int currentQuestion;
     int[] results; //array to store 1 and 0 for correct and incorrect answers
+    String[] questions;
+    int[] answers;
+    TypedArray optionsReferenceArray;
+    String[][] questionOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-        currentQuestion = 0;
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_questions);
         Resources res = getResources();
-        int[] answers = res.getIntArray(R.array.answers);
+        currentQuestion = 0;
+        //Set length for the answers array
+        answers = res.getIntArray(R.array.answers);
         int count = answers.length;
         results = new int[count];
+        questions = res.getStringArray(R.array.questions);
+        //Initialize answer options
+        optionsReferenceArray = res.obtainTypedArray(R.array.optionsReferenceArray);
+        int n = optionsReferenceArray.length();
+        questionOptions = new String[n][];
+        for (int i = 0; i < n; i++) {
+            int id = optionsReferenceArray.getResourceId(i,0);
+            questionOptions[i] = res.getStringArray(id);
+        }
+        optionsReferenceArray.recycle();
+        //
         updateQuestionAndOptions();
     }
 
@@ -36,20 +54,7 @@ public class QuestionsActivity extends AppCompatActivity {
      */
 
     private void updateQuestionAndOptions () {
-        Resources res = getResources();
-        //Update question text
-        String[] questions = res.getStringArray(R.array.questions);
-        TextView questionText = (TextView) findViewById(R.id.question_text);
-        questionText.setText(questions[currentQuestion]);
-        //Update answer options
-        TypedArray optionsReferenceArray = res.obtainTypedArray(R.array.optionsReferenceArray);
-        int n = optionsReferenceArray.length();
-        String[][] questionOptions = new String[n][];
-        for (int i = 0; i < n; i++) {
-            int id = optionsReferenceArray.getResourceId(i,0);
-            questionOptions[i] = res.getStringArray(id);
-        }
-        optionsReferenceArray.recycle();
+        binding.questionText.setText(questions[currentQuestion]);
         for (int i = 0; i < radioButtonIdArray.length; i++) {
             RadioButton answerOption = (RadioButton) findViewById(radioButtonIdArray[i]);
             answerOption.setText(questionOptions[currentQuestion][i]);
@@ -63,16 +68,12 @@ public class QuestionsActivity extends AppCompatActivity {
      */
 
     public void visibilityFinishNext () {
-        Resources res = getResources();
-        String[] questions = res.getStringArray(R.array.questions);
-        Button next = (Button) findViewById(R.id.next_button);
-        Button finish = (Button) findViewById(R.id.finish_button);
         if (currentQuestion < questions.length-1) {
-            next.setVisibility(View.VISIBLE);
-            finish.setVisibility(View.GONE);
+            binding.nextButton.setVisibility(View.VISIBLE);
+            binding.finishButton.setVisibility(View.GONE);
         } else {
-            next.setVisibility(View.GONE);
-            finish.setVisibility(View.VISIBLE);
+            binding.nextButton.setVisibility(View.GONE);
+            binding.finishButton.setVisibility(View.VISIBLE);
         }
     }
 
@@ -82,8 +83,6 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void moveToNextQuestion (View v) {
         checkCorrectness();
-        Resources res = getResources();
-        String[] questions = res.getStringArray(R.array.questions);
         if (currentQuestion < questions.length-1) {
             currentQuestion++;
             clearSelection();
@@ -111,8 +110,6 @@ public class QuestionsActivity extends AppCompatActivity {
      */
 
     public void checkCorrectness () {
-        Resources res = getResources();
-        int[] answers = res.getIntArray(R.array.answers);
         for (int i = 0; i < radioButtonIdArray.length; i++) {
             RadioButton answerOption = (RadioButton) findViewById(radioButtonIdArray[i]);
             if (answerOption.isChecked()) {
@@ -130,8 +127,7 @@ public class QuestionsActivity extends AppCompatActivity {
      */
 
     public void clearSelection () {
-        RadioGroup buttonGroup = (RadioGroup) findViewById(R.id.buttonGroup1);
-        buttonGroup.clearCheck();
+        binding.buttonGroup1.clearCheck();
     }
 
 

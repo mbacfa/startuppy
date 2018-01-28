@@ -1,104 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.android.startuppy.QuestionsActivity">
-
-
-    <TextView
-        android:id="@+id/question_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:background="@color/orange"
-        android:fontFamily="@font/coiny"
-        android:gravity="center"
-        android:paddingLeft="@dimen/edge_padding_standard"
-        android:paddingRight="@dimen/edge_padding_standard"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/fontSizeMedium" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:background="@color/orange"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/previous_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:background="@null"
-            android:onClick="moveToPreviousQuestion"
-            android:text="@string/previous_question_button"
+            android:background="@color/orange"
+            android:fontFamily="@font/coiny"
+            android:gravity="center"
+            android:paddingLeft="@dimen/edge_padding_standard"
+            android:paddingRight="@dimen/edge_padding_standard"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/fontButtons" />
+            android:textSize="@dimen/fontSizeMedium" />
 
-        <Button
-            android:id="@+id/next_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:background="@null"
-            android:onClick="moveToNextQuestion"
-            android:text="@string/next_question_button"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/fontButtons" />
 
-        <Button
-            android:id="@+id/finish_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:background="@null"
-            android:onClick="finishQuiz"
-            android:text="@string/finish_button"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/fontButtons"
-            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:background="@color/orange"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/previous_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@null"
+                android:onClick="moveToPreviousQuestion"
+                android:text="@string/previous_question_button"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/fontButtons" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@null"
+                android:onClick="moveToNextQuestion"
+                android:text="@string/next_question_button"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/fontButtons" />
+
+            <Button
+                android:id="@+id/finish_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@null"
+                android:onClick="finishQuiz"
+                android:text="@string/finish_button"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/fontButtons"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:id="@+id/buttonGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:paddingLeft="@dimen/edge_padding_standard"
+            android:paddingRight="@dimen/edge_padding_standard">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <RadioButton
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+        </RadioGroup>
 
     </LinearLayout>
 
-
-    <RadioGroup
-        android:id="@+id/buttonGroup1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.4"
-        android:paddingLeft="@dimen/edge_padding_standard"
-        android:paddingRight="@dimen/edge_padding_standard">
-
-        <RadioButton
-            android:id="@+id/option1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-        <RadioButton
-            android:id="@+id/option2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-        <RadioButton
-            android:id="@+id/option3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-        <RadioButton
-            android:id="@+id/option4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-    </RadioGroup>
-
-</LinearLayout>
+</layout>
