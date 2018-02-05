@@ -57,9 +57,7 @@
         <item>Great investor</item>
         <item>Great execution</item>
     </string-array>
-
     <!-- answers start from 0 for first option, 1 for second... -->
-
     <integer-array name="answers">
         <item name="q1">1</item>
         <item name="q2">0</item>
@@ -68,12 +66,30 @@
         <item name="q5">2</item>
     </integer-array>
 
-    <string name="resultsScreenText">Your score</string>
-
+    <string name="resultsScreenText">Your score for part 1</string>
     <string name="learningResources">
         <a>http://www.ycombinator.com/</a>
         <a>\nhttp://www.paulgraham.com/ds.html</a>
         <a>\nhttp://playbook.samaltman.com/</a>
     </string>
+    <!-- bonus activity -->
+    <string name="bonus_button">Go!</string>
+    <string name="toast">Let\'s do bonus questions, shall we?</string>
+    <string name="freeFormQuestion">How many starts up out of 10 will fail?</string>
+    <string name="freeFormAnswer">test</string>
+    <string name="checkboxQuestion">What gives you the most upside in a start up?</string>
+    <string-array name="checkBoxOptionsString">
+        <item>Salary</item>
+        <item>Stocks</item>
+        <item>Bonds</item>
+        <item>Options</item>
+    </string-array>
+    <integer-array name="checkBoxAnswers">
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+    <string name="doneBtn">I am DONE!</string>
 
 </resources>

@@ -1,15 +1,20 @@
 package com.example.android.startuppy;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.stream.IntStream;
 
 public class ResultsActivity extends AppCompatActivity {
 
     int[] results;
+    int totalCorrect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,7 @@ public class ResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_results);
         results = getIntent().getIntArrayExtra("RESULTS_ARRAY");
         displayResults();
+        Toast.makeText(this, this.getString(R.string.toast), Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -26,7 +32,7 @@ public class ResultsActivity extends AppCompatActivity {
     public void displayResults () {
         // Update results score
         TextView userResults = (TextView) findViewById(R.id.user_results);
-        int totalCorrect = 0;
+        totalCorrect = 0;
         for (int element : results) {
             totalCorrect += element;
         }
@@ -36,11 +42,11 @@ public class ResultsActivity extends AppCompatActivity {
         totalQuestions.setText(String.valueOf(results.length));
     }
 
-    public void displayResources () {
-        Resources res = getResources();
-        String resource = res.getString(R.string.learningResources);
-        TextView resourceList = (TextView) findViewById(R.id.resource_list);
-        resourceList.setText(resource);
+
+    public void moveToBonus(View view) {
+        Intent moveToBonusIntent = new Intent(this, BonusActivity.class);
+        moveToBonusIntent.putExtra("TOTAL_CORRECT", String.valueOf(totalCorrect));
+        startActivity(moveToBonusIntent);
     }
 
 }

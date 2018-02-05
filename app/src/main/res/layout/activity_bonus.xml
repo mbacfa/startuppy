@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.startuppy.BonusActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/bonus_free_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/freeFormQuestion"
+            android:padding="@dimen/edge_padding_standard"
+            android:textSize="@dimen/fontSizeSmall" />
+
+        <TextView
+            android:id="@+id/bonus_checkbox_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bonus_free_form"
+            android:padding="@dimen/edge_padding_standard"
+            android:text="@string/checkboxQuestion"
+            android:textSize="@dimen/fontSizeSmall" />
+
+        <CheckBox
+            android:id="@+id/checkbox0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bonus_checkbox_question"
+            android:layout_marginLeft="@dimen/edge_padding_standard"
+            android:padding="@dimen/edge_padding_standard" />
+
+        <CheckBox
+            android:id="@+id/checkbox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox0"
+            android:layout_marginLeft="@dimen/edge_padding_standard"
+            android:padding="@dimen/edge_padding_standard" />
+
+        <CheckBox
+            android:id="@+id/checkbox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox1"
+            android:layout_marginLeft="@dimen/edge_padding_standard"
+            android:padding="@dimen/edge_padding_standard" />
+
+        <CheckBox
+            android:id="@+id/checkbox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox2"
+            android:layout_marginLeft="@dimen/edge_padding_standard"
+            android:padding="@dimen/edge_padding_standard" />
+
+        <Button
+            android:id="@+id/doneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox3"
+            android:layout_centerInParent="true"
+            android:background="@color/orange"
+            android:onClick="checkBonusAnswers"
+            android:text="@string/doneBtn" />
+
+    </RelativeLayout>
+
+</layout>

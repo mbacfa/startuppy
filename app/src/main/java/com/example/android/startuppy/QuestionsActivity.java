@@ -13,9 +13,8 @@ import com.example.android.startuppy.databinding.ActivityQuestionsBinding;
 
 public class QuestionsActivity extends AppCompatActivity {
 
-    ActivityQuestionsBinding binding;
-
     private static final int[] radioButtonIdArray = {R.id.option1, R.id.option2, R.id.option3, R.id.option4};
+    ActivityQuestionsBinding binding;
     int currentQuestion;
     int[] results; //array to store 1 and 0 for correct and incorrect answers
     String[] questions;
@@ -129,7 +128,6 @@ public class QuestionsActivity extends AppCompatActivity {
     public void clearSelection () {
         binding.buttonGroup1.clearCheck();
     }
-
 
     /**
      * Switches to the results screen and moves makes results available in the results screen

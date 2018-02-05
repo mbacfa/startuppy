@@ -60,14 +60,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.4"
+        android:autoLink="web"
         android:lineSpacingExtra="@dimen/edge_padding_standard"
         android:paddingBottom="@dimen/edge_padding_standard"
         android:paddingLeft="@dimen/edge_padding_standard"
         android:paddingRight="@dimen/edge_padding_standard"
         android:paddingTop="@dimen/edge_padding_standard"
         android:text="@string/learningResources"
-        android:textSize="@dimen/fontSizeSmall"
-        android:autoLink="web"/>
+        android:textSize="@dimen/fontSizeSmall" />
+
+    <Button
+        android:id="@+id/bonus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/edge_padding_standard"
+        android:background="@color/orange"
+        android:onClick="moveToBonus"
+        android:text="@string/bonus_button"
+        android:textSize="@dimen/fontButtons" />
 
 
 </LinearLayout>

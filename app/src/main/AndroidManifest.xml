@@ -17,11 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".QuestionsActivity" />
-        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".ResultsActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".BonusActivity"></activity>
     </application>
 
 </manifest>
