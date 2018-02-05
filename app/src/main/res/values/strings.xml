@@ -75,8 +75,8 @@
     <!-- bonus activity -->
     <string name="bonus_button">Go!</string>
     <string name="toast">Let\'s do bonus questions, shall we?</string>
-    <string name="freeFormQuestion">How many starts up out of 10 will fail?</string>
-    <string name="freeFormAnswer">test</string>
+    <string name="freeFormQuestion">How an early investor is called?</string>
+    <string name="freeFormAnswer">angel</string>
     <string name="checkboxQuestion">What gives you the most upside in a start up?</string>
     <string-array name="checkBoxOptionsString">
         <item>Salary</item>

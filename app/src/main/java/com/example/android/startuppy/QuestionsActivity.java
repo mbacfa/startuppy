@@ -27,8 +27,12 @@ public class QuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_questions);
+        if (savedInstanceState != null) {
+            currentQuestion = savedInstanceState.getInt("questionNumber");
+        } else {
+            currentQuestion = 0;
+        }
         Resources res = getResources();
-        currentQuestion = 0;
         //Set length for the answers array
         answers = res.getIntArray(R.array.answers);
         int count = answers.length;
@@ -47,6 +51,11 @@ public class QuestionsActivity extends AppCompatActivity {
         updateQuestionAndOptions();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("questionNumber", currentQuestion);
+    }
 
     /**
      * Updates question and answer options based on a current question number
@@ -119,7 +128,6 @@ public class QuestionsActivity extends AppCompatActivity {
             }
         }
     }
-
 
     /**
      * Clears current question radio button selection before moving to another question
