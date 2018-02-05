@@ -5,5 +5,5 @@
     <dimen name="fontSizeMedium">32sp</dimen>
     <dimen name="fontSizeSmall">16sp</dimen>
     <dimen name="fontButtons">14sp</dimen>
-    <dimen name="edge_padding_standard">16dp</dimen>
+    <dimen name="marginOrPaddingStandard">16dp</dimen>
 </resources>

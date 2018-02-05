@@ -57,6 +57,7 @@
         <item>Great investor</item>
         <item>Great execution</item>
     </string-array>
+
     <!-- answers start from 0 for first option, 1 for second... -->
     <integer-array name="answers">
         <item name="q1">1</item>
@@ -72,6 +73,7 @@
         <a>\nhttp://www.paulgraham.com/ds.html</a>
         <a>\nhttp://playbook.samaltman.com/</a>
     </string>
+
     <!-- bonus activity -->
     <string name="bonus_button">Go!</string>
     <string name="toast">Let\'s do bonus questions, shall we?</string>

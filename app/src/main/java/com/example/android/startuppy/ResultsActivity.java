@@ -29,7 +29,7 @@ public class ResultsActivity extends AppCompatActivity {
      * shows total number of correct answers and total number of answered questions
      */
 
-    public void displayResults () {
+    public void displayResults() {
         // Update results score
         TextView userResults = (TextView) findViewById(R.id.user_results);
         totalCorrect = 0;

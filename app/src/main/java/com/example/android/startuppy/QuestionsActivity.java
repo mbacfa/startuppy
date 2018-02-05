@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.databinding.DataBindingUtil;
+
 import com.example.android.startuppy.databinding.ActivityQuestionsBinding;
 
 
@@ -43,7 +44,7 @@ public class QuestionsActivity extends AppCompatActivity {
         int n = optionsReferenceArray.length();
         questionOptions = new String[n][];
         for (int i = 0; i < n; i++) {
-            int id = optionsReferenceArray.getResourceId(i,0);
+            int id = optionsReferenceArray.getResourceId(i, 0);
             questionOptions[i] = res.getStringArray(id);
         }
         optionsReferenceArray.recycle();
@@ -61,7 +62,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * Updates question and answer options based on a current question number
      */
 
-    private void updateQuestionAndOptions () {
+    private void updateQuestionAndOptions() {
         binding.questionText.setText(questions[currentQuestion]);
         for (int i = 0; i < radioButtonIdArray.length; i++) {
             RadioButton answerOption = (RadioButton) findViewById(radioButtonIdArray[i]);
@@ -75,8 +76,8 @@ public class QuestionsActivity extends AppCompatActivity {
      * Replaces Finish button with Next button if user returns to previous questions
      */
 
-    public void visibilityFinishNext () {
-        if (currentQuestion < questions.length-1) {
+    public void visibilityFinishNext() {
+        if (currentQuestion < questions.length - 1) {
             binding.nextButton.setVisibility(View.VISIBLE);
             binding.finishButton.setVisibility(View.GONE);
         } else {
@@ -89,9 +90,9 @@ public class QuestionsActivity extends AppCompatActivity {
      * Updates Questions screen with next question and answer options
      */
 
-    public void moveToNextQuestion (View v) {
+    public void moveToNextQuestion(View v) {
         checkCorrectness();
-        if (currentQuestion < questions.length-1) {
+        if (currentQuestion < questions.length - 1) {
             currentQuestion++;
             clearSelection();
             updateQuestionAndOptions();
@@ -103,7 +104,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * Updates Questions screen with previous question and answer options
      */
 
-    public void moveToPreviousQuestion (View v) {
+    public void moveToPreviousQuestion(View v) {
         checkCorrectness();
         if (currentQuestion > 0) {
             currentQuestion--;
@@ -117,7 +118,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * compares user radio button selection with the correct answer radio button selection and increments score if match
      */
 
-    public void checkCorrectness () {
+    public void checkCorrectness() {
         for (int i = 0; i < radioButtonIdArray.length; i++) {
             RadioButton answerOption = (RadioButton) findViewById(radioButtonIdArray[i]);
             if (answerOption.isChecked()) {
@@ -133,7 +134,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * Clears current question radio button selection before moving to another question
      */
 
-    public void clearSelection () {
+    public void clearSelection() {
         binding.buttonGroup1.clearCheck();
     }
 
@@ -141,7 +142,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * Switches to the results screen and moves makes results available in the results screen
      */
 
-    public void finishQuiz (View view) {
+    public void finishQuiz(View view) {
         checkCorrectness();
         Intent finishQuiz = new Intent(this, ResultsActivity.class);
         finishQuiz.putExtra("RESULTS_ARRAY", results);

@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/freeFormQuestion"
-            android:padding="@dimen/edge_padding_standard"
+            android:padding="@dimen/marginOrPaddingStandard"
             android:textSize="@dimen/fontSizeSmall" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/bonus_free_form"
-            android:padding="@dimen/edge_padding_standard"
+            android:padding="@dimen/marginOrPaddingStandard"
             android:text="@string/checkboxQuestion"
             android:textSize="@dimen/fontSizeSmall" />
 
@@ -31,32 +31,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/bonus_checkbox_question"
-            android:layout_marginLeft="@dimen/edge_padding_standard"
-            android:padding="@dimen/edge_padding_standard" />
+            android:layout_marginLeft="@dimen/marginOrPaddingStandard"
+            android:padding="@dimen/marginOrPaddingStandard" />
 
         <CheckBox
             android:id="@+id/checkbox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/checkbox0"
-            android:layout_marginLeft="@dimen/edge_padding_standard"
-            android:padding="@dimen/edge_padding_standard" />
+            android:layout_marginLeft="@dimen/marginOrPaddingStandard"
+            android:padding="@dimen/marginOrPaddingStandard" />
 
         <CheckBox
             android:id="@+id/checkbox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/checkbox1"
-            android:layout_marginLeft="@dimen/edge_padding_standard"
-            android:padding="@dimen/edge_padding_standard" />
+            android:layout_marginLeft="@dimen/marginOrPaddingStandard"
+            android:padding="@dimen/marginOrPaddingStandard" />
 
         <CheckBox
             android:id="@+id/checkbox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/checkbox2"
-            android:layout_marginLeft="@dimen/edge_padding_standard"
-            android:padding="@dimen/edge_padding_standard" />
+            android:layout_marginLeft="@dimen/marginOrPaddingStandard"
+            android:padding="@dimen/marginOrPaddingStandard" />
 
         <Button
             android:id="@+id/doneBtn"
